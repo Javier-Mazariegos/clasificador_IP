@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv=”Content-Type” content=”text/html; charset=ISO-8859-1″ />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+        .container{
+          display: flex;
+          height: 50vh;
+          margin-top: 10%;
+          justify-content: center;
+          flex-direction: column;
+          padding: 10vh !important;
+        }
+  
+        .row{
+          min-height: 150px;
+        }
+
+       
+@media screen and (max-width: 800px){
+	#menu {position:relative}
+	#menu ul {background:#111;position:absolute;top:100%;right:0;left:0;z-index:3;height:auto;display:none}
+	#menu ul.sub-menus {width:100%;position:static;}
+	#menu ul.sub-menus a {padding-left:30px;}
+	#menu li {display:block;float:none;width:auto;}
+	#menu input, #menu label {position:absolute;top:0;left:0;display:block}
+	#menu input {z-index:4}
+	#menu input:checked + label {color:black}
+	#menu input:checked + label:before {content:"\00d7"}
+	#menu input:checked ~ ul {display:block}
+}
+      </style>
+</head>
+<body >
+        <div class="container shadow-lg">
+
+        <h2>
+            Clasificador de IP
+        </h2>
+            <form method="POST" action="/verificar">
+            <div class="form-group">
+                <label for="exmapleIP"></label>
+                <input type="text" class="form-control" name="ip_verificar" placeholder="Ingrese una IP" pattern="^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$" required>
+            </div>
+            <button type="submit" style="background-color: rgb(78, 78, 255); color:#ffee02; border-color:rgb(78, 78, 255) ;" class="btn btn-primary">Verificar</button>
+            </form>
+
+
+            {% if -1 == bandera %}
+            <div class="form-group">
+                <label for="exampleInputEmail1">IP</label>
+                <input type="text" class="form-control" name="url" value="{{ip_address}}" readonly>
+
+                <label for="exampleInputEmail1">Tipo</label>
+                <input type="text" class="form-control" name="url" value="{{ip_class}}" readonly>
+
+                <label for="exampleInputEmail1">Clase</label>
+                <input type="text" class="form-control" name="url" value="{{class_name}}" readonly>
+            </div>
+
+            {% endif%}
+
+        </div>
+
+</body>
+</html>
+
