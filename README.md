@@ -3,7 +3,7 @@
 ## Instrucciones para utilizar el programa
 
 ### 1. Clonar el repositorio: https://github.com/Javier-Mazariegos/clasificador_IP.git
-### 2. Instalar los requerimientos: pip install requeriments.txt
+### 2. Instalar los requerimientos: pip install requirements.txt
 ### 3. Abrir una nueva terminal
 ### 4. Ingresar a la carpeta src
 ### 5. Ejecutar el programa: pyhton app.py
