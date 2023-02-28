@@ -1,4 +1,4 @@
-from flask import Flask, url_for, request,redirect, abort
+from flask import Flask,request,render_template,redirect,url_for
 from jinja2 import Template, Environment, FileSystemLoader
 
 environment="development"
@@ -67,8 +67,4 @@ def verificar():
         return redirect(url_for('tiny',respuesta = respuesta, ip_address = ip_address,ip_class = ip_class, class_name = class_name), 301)
 
 if __name__ == "__main__":
-    debug=False
-    if environment == "development" or environment == "local":
-        debug=True
-    print("Local change")
-    app.run(host="localhost")
+    app.run(debug=True)
